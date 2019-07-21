@@ -1,4 +1,4 @@
-# pjt_01
+pjt_01
 
 ## 1. 프로젝트 목표
 
@@ -64,32 +64,13 @@
   - ### &#128680; 시행착오
 
     - ##### 반복문을 돌릴 때 영화코드와 조건식을 이용하여 중복되지 않게 처리하는 방법
-  
-      ```python
-      # 날짜를 거꾸로 돌아가면서 데이터를 얻기 때문에, 기존에 이미 영화코드가 들어가 있다면,
-    # 그게 가장 마지막 주 자료다. 즉, 기존 영화코드가 있다면 딕셔너리에 넣지 않는다.
-      if code not in result:
-      ```
-  
-      
-  
-  ```python
-  # 정보 넣을 딕셔너리
-  result = {}
-  # 1-4. 딕셔너리에 넣기
-  for movie in movies:
-      code = movie.get('movieCd')
-      # 영화가 중복되지 않게 넣어준다.
-      if code not in result: 
-          # 영화 코드명을 key로 가지는 딕셔너리 내부에, 필요정보들을 가지는 딕셔너리를 생성
-          result[code] = {
-              'movieCd': movie.get('movieCd'),
-              'movieNm': movie.get('movieNm'),
-              'audiAcc': movie.get('audiAcc')
-          }
-  ```
 
-- ##### csv 파일 생성하여 저장
+      ```python
+      # 날짜를 거꾸로 돌아가면서 데이터를 얻기 때문에, 기존에 이미 영화코드가 들어간다면,
+      # 그게 마지막 주 자료이다. 즉, 기존 영화코드가 있다면 딕셔너리에 넣지 않는다.
+      if code not in result:
+      # result 라는 딕셔너리에 code에 해당하는 키가 없을 경우에만 if문을 들어간다.
+      ```
 
   ```python
   # 2. result 딕셔너리를 boxoffice.csv을 생성하여 저장
@@ -105,6 +86,7 @@
   - #### `boxoffice.csv` Image
 
   ![boxoffice](https://user-images.githubusercontent.com/52814897/61593002-06ce8800-ac15-11e9-842a-1518edc6f96e.PNG)
+
 
 
 
